@@ -1,0 +1,69 @@
+<html>
+<head>
+	<title> TK's Pizzeria </title>
+	<link rel="icon" href="p1.PNG">
+	<style>
+		* { font-size: 40px; font-family: Harlow Solid; } 
+	input[type=radio] { border: 0px; width: 2%; height: 0.5em; }
+	input[type=checkbox] { border: 0px; width: 2%; height: 0.5em; }
+		body { background-image: url("ab1.jpg"); }
+	</style>
+
+	<script>
+		function po()
+		{
+			event.preventDefault();
+			let name = document.getElementById("name");
+			let s = document.getElementById("s");
+			let m = document.getElementById("m");
+			let l = document.getElementById("l");
+			let pe = document.getElementById("pe");
+			let co = document.getElementById("co");
+			let ch = document.getElementById("ch");
+			let on = document.getElementById("on");
+			let msg = document.getElementById("msg");
+
+			let size = "";
+			if (s.checked)		size = "small";
+			else if (m.checked)	size = "medium";
+			else			size = "large";
+
+
+			let toppings = "";
+			if (pe.checked)		toppings += "Pepperoni ";
+			if (co.checked)		toppings += "Corn ";
+			if (ch.checked)		toppings += "Cheese ";
+			if (on.checked)		toppings += "Onion ";
+	
+			let ms = "name = " + name.value + " size = " + size + " toppings = " + toppings;
+			msg.innerHTML = ms;
+		}
+	</script>
+</head>
+<body>
+<center>
+	<h1 TK's Pizza App </h1>
+	<form onsubmit="po()">
+		<input type="text" id="name" placeholder="Enter your name "/>
+		<br><br>
+		<font size="6" face="verdana" color="Black">
+		<label> Select Pizza Size </label><br> 
+		<input type="radio" name="si" id="s" value="s" /> Small
+		<input type="radio" name="si" id="m" value="m" /> Medium
+		<input type="radio" name="si" id="l" value="l" /> Large
+		<br><br>
+		<label> Select Pizza Toppings </label><br>
+		<input type="checkbox" id="pe"	/> Pepperoni
+		<input type="checkbox" id="co"	/> Corn
+		<input type="checkbox" id="ch"	/> Cheese
+		<input type="checkbox" id="on"	/> Onion
+		<br><br>
+		<input type="submit" value="Place Order" />
+	</form>
+		<h2 id="msg"/>
+</center>
+</body>
+</html>
+
+		
+
